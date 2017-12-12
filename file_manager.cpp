@@ -15,13 +15,13 @@ int** build_map(char* filename) {
 
     //Crear mapa de obstaculos
 
-    int** obstaculos = new int*[m];
-    for (int i=0; i<m; i++) {
-        obstaculos[i] = new int[n];
+    int** obstaculos = new int*[n];
+    for (int i=0; i<n; i++) {
+        obstaculos[i] = new int[m];
     }
 
-    for (int i=0; i<m; i++) {
-        for (int j=0; j<n; j++) {
+    for (int i=0; i<n; i++) {
+        for (int j=0; j<m; j++) {
             file >> obstaculos[j][i];
         }
     }
