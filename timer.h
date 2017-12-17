@@ -7,4 +7,4 @@
 
 using namespace std;
 
-long time(void (*func)(vector<int> , vector<int> , int, int, int, int, double, bool**&),vector<int> x, vector<int> y, int x1, int y1, int x2, int y2, double dist, bool** &visitados);
+long time(void (*func)(vector<int> , vector<int> , int, int, int, int, double, bool**),vector<int> x, vector<int> y, int x1, int y1, int x2, int y2, double dist, bool** visitados);

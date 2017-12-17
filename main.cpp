@@ -13,46 +13,45 @@ int* shape;
 int** mapa;
 vector<vector<int>> puntos;
 
-//Distancia aumenta en 1 por movimiento horizontal o vertical. 1.41 por movimiento diagonal.
-
-void gbj(vector<int> x, vector<int> y, int x1, int y1, int x2, int y2, double dist, bool** &visitados) {
+void gbj(vector<int> x, vector<int> y, int x1, int y1, int x2, int y2, double dist, bool** visitados) {
 
     if (mapa[x1][y1] == 1) {
         return;
     }
     visitados[x1][y1] = true;
-    node sol = node(x, y, x1, y1, dist);
+    node* sol = new node(x, y, x1, y1, dist);
 
-    unsigned long size = sol.sol_x.size();
+    unsigned long size = sol->sol_x.size();
 
-    if (sol.sol_x[size-1] == x2 && sol.sol_y[size-1] == y2) {
+    if (sol->sol_x[size-1] == x2 && sol->sol_y[size-1] == y2) {
         if (best_dist == -1) {
-            best_x = sol.sol_x;
-            best_y = sol.sol_y;
+            best_x = sol->sol_x;
+            best_y = sol->sol_y;
             best_dist = dist;
         } else if (dist < best_dist) {
-            best_x = sol.sol_x;
-            best_y = sol.sol_y;
+            best_x = sol->sol_x;
+            best_y = sol->sol_y;
             best_dist = dist;
         }
+	delete sol;
         return;
     }
 
     if (x1+1 <= shape[0]-1) {
         if (!visitados[x1+1][y1]) {
-            gbj(sol.sol_x,sol.sol_y,x1+1,y1,x2,y2,dist+1,visitados);
+            gbj(sol->sol_x,sol->sol_y,x1+1,y1,x2,y2,dist+1,visitados);
         }
 
         if (y1-1 >= 0) {
             if (!visitados[x1+1][y1-1]) {
-                gbj(sol.sol_x,sol.sol_y,x1+1,y1-1,x2,y2,dist+1.41,visitados);
+                gbj(sol->sol_x,sol->sol_y,x1+1,y1-1,x2,y2,dist+1.41,visitados);
             }
         }
 
 
         if (y1+1 <= shape[0]-1) {
             if (!visitados[x1+1][y1+1]) {
-                gbj(sol.sol_x,sol.sol_y,x1+1,y1+1,x2,y2,dist+1.41,visitados);
+                gbj(sol->sol_x,sol->sol_y,x1+1,y1+1,x2,y2,dist+1.41,visitados);
             }
 
         }
@@ -62,31 +61,31 @@ void gbj(vector<int> x, vector<int> y, int x1, int y1, int x2, int y2, double di
 
         if (x1-1 >= 0) {
             if (!visitados[x1-1][y1+1]) {
-                gbj(sol.sol_x,sol.sol_y,x1-1,y1+1,x2,y2,dist+1.41,visitados);
+                gbj(sol->sol_x,sol->sol_y,x1-1,y1+1,x2,y2,dist+1.41,visitados);
             }
         }
 
         if (!visitados[x1][y1+1]) {
-            gbj(sol.sol_x,sol.sol_y,x1,y1+1,x2,y2,dist+1,visitados);
+            gbj(sol->sol_x,sol->sol_y,x1,y1+1,x2,y2,dist+1,visitados);
         }
 
     }
 
     if (y1-1 >= 0) {
         if (!visitados[x1][y1-1]) {
-            gbj(sol.sol_x,sol.sol_y,x1,y1-1,x2,y2,dist+1,visitados);
+            gbj(sol->sol_x,sol->sol_y,x1,y1-1,x2,y2,dist+1,visitados);
         }
     }
 
     if (y1-1 >= 0 && x1-1 >= 0) {
         if (!visitados[x1-1][y1-1]) {
-            gbj(sol.sol_x,sol.sol_y,x1-1,y1-1,x2,y2,dist+1.41,visitados);
+            gbj(sol->sol_x,sol->sol_y,x1-1,y1-1,x2,y2,dist+1.41,visitados);
         }
     }
 
     if (x1-1 >= 0) {
         if (!visitados[x1-1][y1]) {
-            gbj(sol.sol_x,sol.sol_y,x1-1,y1,x2,y2,dist+1,visitados);
+            gbj(sol->sol_x,sol->sol_y,x1-1,y1,x2,y2,dist+1,visitados);
         }
     }
 

@@ -1,0 +1,6 @@
+punto inicial: (5,1)
+punto final: (7,9)
+Solucion encontrada:
+(5,1) -> (5,2) -> (5,3) -> (4,4) -> (5,4) -> (4,5) -> (3,6) -> (4,6) -> (5,7) -> (6,7) -> (7,7) -> (7,8) -> (8,9) -> (7,9)
+Largo del camino: 15.05
+Tiempo de ejecucion: 361 microsegundos.

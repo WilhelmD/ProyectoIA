@@ -1,0 +1,6 @@
+punto inicial: (65,73)
+punto final: (10,10)
+Solucion encontrada:
+
+Largo del camino: -1
+Tiempo de ejecucion: 1 microsegundos.

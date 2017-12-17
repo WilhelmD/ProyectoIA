@@ -1,0 +1,2 @@
+Dec 17 09:36:25 wil-A790GXM-AD3 kernel: [  447.819863] Out of memory: Kill process 2393 (ProyectoIA) score 897 or sacrifice child
+Dec 17 09:36:25 wil-A790GXM-AD3 kernel: [  447.819889] Killed process 2393 (ProyectoIA) total-vm:10949008kB, anon-rss:3765856kB, file-rss:0kB, shmem-rss:0kB

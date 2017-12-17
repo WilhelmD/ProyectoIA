@@ -21,4 +21,4 @@ struct node {
     }
 };
 
-void gbj(vector<int> x, vector<int> y, int x1, int y1, int x2, int y2, double dist, bool** &visitados);
+void gbj(vector<int> x, vector<int> y, int x1, int y1, int x2, int y2, double dist, bool** visitados);

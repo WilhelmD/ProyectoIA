@@ -1,0 +1,2 @@
+punto inicial: (10,373)
+punto final: (501,10)
